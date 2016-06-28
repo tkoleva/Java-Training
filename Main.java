@@ -5,42 +5,44 @@ import java.util.Scanner;
 
 public class Main {
 
-//        firstTask();
-//        secondTask();
-//        thirdTask();
-//        fourthTask();
-//        rectSquareParam(input);
-//        trapecSquare(input);
+    public static void main(String[] args) throws IOException {
+//        oddOrEvenNum();
+//        dividedToFiveOrSeven();
+//        thirdDigitIsSeven();
+//        checkThirdBit();
+//        rectAreaAndPerimeter();
+//        trapeziumArea();
 //        moonWeightCalc();
 //        pointInCircle();
-//        pointInCircOutRect();
+//        pointInCircleOutRect();
 //        fourDigitsNumber();
-//        eleventhTask();
-//        revertNumber();
-//        simpleNumbers();
-
-    public static void main(String[] args) throws IOException {
-
+//        fourDigitsNumberSimple();
+//        positionBitValue();
+//        changeBitValue();
+//        primeNumbers();
 
     }
 
-    private static void simpleNumbers() {
+    private static void primeNumbers() {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter number n < 100: ");
-        int n = input.nextInt();
-        double squareRootN = Math.sqrt(n);
+        System.out.print("Enter a number num < 100: ");
+        int num = input.nextInt();
 //        int[] numbers = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+        int maxDevider = (int) Math.sqrt(num);
 
-        for (int i = 2; i < Math.sqrt(n); i++ )
-            for (int j = i * i; j <= n; j++){
-                System.out.println("");
+        for (int i = 2; i < maxDevider; i++){
+            if ((num % i) == 0){
+                System.out.println(i + " is not prime");
+            } else {
+                System.out.println(i + " is prime");
             }
+        }
 
         input.close();
     }
 
-    private static void revertNumber() {
+    private static void changeBitValue() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter number N: ");
@@ -55,12 +57,19 @@ public class Main {
         System.out.println(Integer.toBinaryString(number));
         System.out.println(Integer.toBinaryString(mask));
 
-        System.out.println((((number & mask) != 0) && (v == 0))? (number & (~mask)) : (number | mask));
+        // If (number * mask) == 1 and v ==0
+        if (((number & mask) != 0) && (v == 0)){
+            // convert mask from 1 to 0
+            System.out.println(number & (~mask));
+        } else {
+            // in any other case (number + mask = 1)
+            System.out.println(number | mask);
+        }
 
         input.close();
     }
 
-    private static void eleventhTask() {
+    private static void positionBitValue() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter number N: ");
@@ -71,7 +80,6 @@ public class Main {
         int mask = i << position;
 
         System.out.println(Integer.toBinaryString(number));
-        System.out.println(Integer.toBinaryString(position));
         System.out.println(Integer.toBinaryString(mask));
 
         // Move the 1st bit with p positions
@@ -84,31 +92,7 @@ public class Main {
     private static void fourDigitsNumber() {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter the first digit: ");
-        int firstDigit = input.nextInt();
-
-        System.out.println("Enter the second digit: ");
-        int secondDigit = input.nextInt();
-
-        System.out.println("Enter the third digit: ");
-        int thirdDigit = input.nextInt();
-
-        System.out.println("Enter the fourth digit: ");
-        int fourthDigit = input.nextInt();
-
-        System.out.println("The number is: " + firstDigit + secondDigit + thirdDigit + fourthDigit);
-
-        int digitSum = firstDigit + secondDigit + thirdDigit + fourthDigit;
-        System.out.println("The sum of the number's digits is: " + digitSum);
-
-        System.out.println("The digits of the number in opposite way: " + fourthDigit + thirdDigit + secondDigit +
-            firstDigit);
-
-        System.out.println("The first digit on the last place: " + fourthDigit + secondDigit + thirdDigit + firstDigit);
-
-        System.out.println("The middle digits swapped: " + firstDigit + thirdDigit + secondDigit + fourthDigit);
-
-        System.out.println("Enter your test number: ");
+        System.out.print("Enter your test number: ");
         int totalNum = input.nextInt();
         int digitOne = totalNum % 10;
         System.out.println(digitOne);
@@ -135,21 +119,54 @@ public class Main {
         input.close();
     }
 
-    private static void pointInCircOutRect() {
+    private static void fourDigitsNumberSimple() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the first digit: ");
+        int firstDigit = input.nextInt();
+
+        System.out.print("Enter the second digit: ");
+        int secondDigit = input.nextInt();
+
+        System.out.print("Enter the third digit: ");
+        int thirdDigit = input.nextInt();
+
+        System.out.print("Enter the fourth digit: ");
+        int fourthDigit = input.nextInt();
+
+        System.out.println("The number is: " + firstDigit + secondDigit + thirdDigit + fourthDigit);
+
+        int digitSum = firstDigit + secondDigit + thirdDigit + fourthDigit;
+        System.out.println("The sum of the number's digits is: " + digitSum);
+
+        System.out.println("The digits of the number in opposite way: " + fourthDigit + thirdDigit + secondDigit +
+            firstDigit);
+
+        System.out.println("The first digit on the last place: " + fourthDigit + secondDigit + thirdDigit + firstDigit);
+
+        System.out.println("The middle digits swapped: " + firstDigit + thirdDigit + secondDigit + fourthDigit);
+
+        input.close();
+    }
+
+    private static void pointInCircleOutRect() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter the first coordinate: ");
-        double coordinateX = input.nextDouble();
+        int coordinateX = input.nextInt();
 
         System.out.println("Enter the second coordinate: ");
-        double coordinateY = input.nextDouble();
+        int coordinateY = input.nextInt();
 
-        double powerK = Math.sqrt((Math.pow(coordinateX, 2.0)) + (coordinateY * coordinateY));
+        // From Pythagorean theorem: c^2 = a^2 + b^2
+        double powerK = Math.sqrt((Math.pow(coordinateX, 2.0)) + (Math.pow(coordinateY, 2.0)));
         System.out.println(powerK);
 
+        // Check if our point is in a circle with coordinates K((0,0),5)
         boolean outCircle = powerK < 5.0;
         System.out.println("The point is in the circle: " + outCircle);
 
+        // Check if our point is outside of a rectangle with coordinates (-1, 1) and (5, 5)
         boolean outRectX = ((coordinateX < -1) || (coordinateX) > 5);
         boolean outRectY = ((coordinateY < 1) || coordinateY > 5);
         boolean outRectPoint = outRectX && outRectY;
@@ -169,10 +186,12 @@ public class Main {
         System.out.println("Enter the second coordinate: ");
         int coordinateY = input.nextInt();
 
-        double powerK = Math.sqrt((coordinateX * coordinateX) + (coordinateY * coordinateY));
+        // From Pythagorean theorem: c^2 = a^2 + b^2
+        double powerK = Math.sqrt((Math.pow(coordinateX, 2.0)) + (Math.pow(coordinateY, 2.0)));
 
         System.out.println(powerK);
 
+        // Check if our point is in a circle with coordinates K((0,0),5)
         boolean isInCircle = (powerK < 5);
         System.out.println("The point is in the circle: " + isInCircle);
 
@@ -188,48 +207,49 @@ public class Main {
         System.out.println("Enter your weight on Earth: ");
         float myWeight = input.nextFloat();
 
-        float totalMasa = myWeight / 9.8f;
-        float moonWeight = totalMasa * gMoon;
+        float totalMass = myWeight / 9.8f;
+        float moonWeight = totalMass * gMoon;
 
         System.out.println("Your weight on Moon is: " + moonWeight);
 
         input.close();
     }
 
-    private static void trapecSquare(Scanner input) {
-        double trapecSideA;
-        double trapecSideB;
-        double trapecHeight;
+    private static void trapeziumArea() {
+        Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter side A of a trapecium: ");
-        trapecSideA = input.nextDouble();
-        System.out.println("Enter side B of a trapecium: ");
-        trapecSideB = input.nextDouble();
-        System.out.println("Enter height H of a trapecium: ");
-        trapecHeight = input.nextDouble();
+        System.out.print("Enter side A of a trapezium: ");
+        double trapeziumSideA = input.nextDouble();
+        System.out.print("Enter side B of a trapezium: ");
+        double trapeziumSideB = input.nextDouble();
+        System.out.print("Enter height H of a trapezium: ");
+        double trapeziumHeight = input.nextDouble();
 
-        double trapecSquare = ((trapecSideA + trapecSideB) / 2) * trapecHeight;
-        System.out.println("The square of a trapecium is: " + trapecSquare);
+        double trapeziumArea = ((trapeziumSideA + trapeziumSideB) / 2) * trapeziumHeight;
+        System.out.println("The square of a trapecium is: " + trapeziumArea);
+
+        input.close();
     }
 
-    private static void rectSquareParam(Scanner input) {
-        int rectSideA = 0;
-        int rectSideB = 0;
+    private static void rectAreaAndPerimeter() {
+        Scanner input = new Scanner(System.in);
 
         System.out.println("Enter side A of a rectangle: ");
-        rectSideA = input.nextInt();
+        int rectSideA = input.nextInt();
 
         System.out.println("Enter side B of a rectangle: ");
-        rectSideB = input.nextInt();
+        int rectSideB = input.nextInt();
 
-        int rectSquare = (int) (rectSideA * rectSideB);
-        System.out.println("The squear of a rectagnle is: " + rectSquare);
+        int rectArea = (int) (rectSideA * rectSideB);
+        System.out.println("The squear of a rectagnle is: " + rectArea);
 
         int rectPerimeter = (int)(2 * (rectSideA + rectSideB));
         System.out.println("The perimerter of a rectangle is: " + rectPerimeter);
+
+        input.close();
     }
 
-    private static void fourthTask() {
+    private static void checkThirdBit() {
         int number = 41948;
         int mask = 4;
 
@@ -237,28 +257,36 @@ public class Main {
         System.out.println(Integer.toBinaryString(mask));
 
         int result = number + mask;
-        boolean thirdIsOne = result != 0;
+        boolean thirdIsOne = (result != 0);
 
-        System.out.println(thirdIsOne);
+        System.out.println("The third bit of our number is 1: " + thirdIsOne);
     }
 
-    private static void thirdTask() {
+    private static void thirdDigitIsSeven() {
+
         int number = 20100;
+
+        //Take the third digit of the number and check if the division by 10 remainder is equal to 7
         boolean isThirdSeven = (((number / 100) % 10) == 7);
-        System.out.println(isThirdSeven);
+
+        System.out.println("The third digit of your number is 7: " + isThirdSeven);
     }
 
-    private static void secondTask() {
+    private static void dividedToFiveOrSeven() {
+
         int number = 35;
         boolean isDivByFive = ((number % 5) == 0);
         boolean isDivBySeven = ((number % 7) == 0);
         boolean isDivided = isDivByFive && isDivBySeven;
+
         System.out.println(number + " is divisible by 5 and 7: " + isDivided);
     }
 
-    private static void firstTask() {
+    private static void oddOrEvenNum() {
+
         int number = 24;
-        boolean isOdd = (number % 2) !=0;
+        boolean isOdd = ((number % 2) != 0);
+
         System.out.println("Our number is odd: " + isOdd);
     }
 }
