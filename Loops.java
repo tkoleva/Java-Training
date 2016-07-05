@@ -5,23 +5,24 @@ import java.util.Scanner;
 public class Loops {
 
     public static void main(String[] args) {
-//        printNumbersToN();
-//        numDividedToThreeOrSeven();
-//        guessTheNumber();
-//        minMaxNumber();
-//        playingCards();
-//        sumFibonacciNums();
-//        nDividedKFactorial();
-//        nMultiKFactorial();
-//        nDivKPowNFactorial();
-//        catalansNumbers();
-//        numberMatrix();
-//        lastZerosFactorial();
-//        decimalToBinary();
-//        decimalToHex();
-//        binaryToDecimal();
-//        hexToDecimal();
-//        randomNumber();
+//        printNumbersToN(); - correct
+//        numDividedToThreeOrSeven(); - not correct, the requirement is different
+//        guessTheNumber(); - correct
+//        minMaxNumber(); - correct
+//        playingCards(); - not correct, not displaying J, Q, K, A
+//        sumFibonacciNums(); - correct
+//        nDividedKFactorial(); - correct, but you can print better hints
+//        nMultiKFactorial(); - correct
+//        nDivKPowNFactorial(); - seems to be correct as the requirement is not very clear
+//        catalansNumbers(); - correct, but n can be 0 and 1 while you are saying "Enter number N > 1:"
+//        numberMatrix(); - correct, but doesn't look like matrix when double digit numbers are printed
+//        lastZerosFactorial(); - correct
+//        decimalToBinary(); - not correct, no check for negative numbers and bad results for bigger numbers
+//        decimalToHex(); - 50% correct, not working for negative numbers
+//        binaryToDecimal(); - not correct, input requirement is wrong (you want int as an input where it should be binary), also not working correct
+//        hexToDecimal(); - 50% correct, not working for negative numbers
+//        randomNumber(); - correct
+//        Even though there are small mistakes your homework is eGGcelent!
     }
 
     private static void randomNumber() {
