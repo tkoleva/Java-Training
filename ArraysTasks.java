@@ -18,33 +18,34 @@ public class ArraysTasks {
 
         int[] firstArray = new int[10];
         int count = 1;
-//        int number;
+        int element = 0;
         int maxCount = 1;
-//        int maxNumber;
 
-        for (int i = 0; i < firstArray.length; i++) {
-            System.out.printf("Enter the %d array element: ", i);
+        for (int i = 1; i < firstArray.length; i++) {
+            System.out.printf("Enter the array element[%d]: ", i);
             firstArray[i] = input.nextInt();
-            System.out.println();
         }
 
         for (int i = 0; i < firstArray.length - 1; i++) {
             if (firstArray[i] + 1 == firstArray[i + 1]) {
                 count += 1;
-//                number = firstArray[i];
-//                System.out.println(number);
 
                 if (count >= maxCount) {
                     maxCount = count;
-//                    maxNumber = number;
-//                    System.out.println(maxNumber);
-//                    System.out.println(firstArray[i + count]);
+                    element = i;
                 }
             } else {
                 count = 1;
             }
         }
+
         System.out.println("The count of numbers increasing with 1 in a row is: " + maxCount);
+        System.out.print("{");
+        for (int i = 1; i <= maxCount; i++) {
+            System.out.print(firstArray[maxCount - element - 1] + " ");
+            element--;
+        }
+        System.out.print("}");
 
         input.close();
     }
@@ -62,7 +63,6 @@ public class ArraysTasks {
         for (int i = 0; i < firstArray.length; i++) {
             System.out.printf("Enter the array element[%d]: ", i);
             firstArray[i] = input.nextInt();
-//            System.out.println();
         }
 
         System.out.println(java.util.Arrays.toString(firstArray));
