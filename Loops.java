@@ -5,24 +5,23 @@ import java.util.Scanner;
 public class Loops {
 
     public static void main(String[] args) {
-//        printNumbersToN(); - correct
-//        numDividedToThreeOrSeven(); - not correct, the requirement is different
-//        guessTheNumber(); - correct
-//        minMaxNumber(); - correct
-//        playingCards(); - not correct, not displaying J, Q, K, A
-//        sumFibonacciNums(); - correct
-//        nDividedKFactorial(); - correct, but you can print better hints
-//        nMultiKFactorial(); - correct
-//        nDivKPowNFactorial(); - seems to be correct as the requirement is not very clear
-//        catalansNumbers(); - correct, but n can be 0 and 1 while you are saying "Enter number N > 1:"
-//        numberMatrix(); - correct, but doesn't look like matrix when double digit numbers are printed
-//        lastZerosFactorial(); - correct
-//        decimalToBinary(); - not correct, no check for negative numbers and bad results for bigger numbers
-//        decimalToHex(); - 50% correct, not working for negative numbers
-//        binaryToDecimal(); - not correct, input requirement is wrong (you want int as an input where it should be binary), also not working correct
-//        hexToDecimal(); - 50% correct, not working for negative numbers
-//        randomNumber(); - correct
-//        Even though there are small mistakes your homework is eGGcelent!
+//        printNumbersToN();
+//        numDividedToThreeOrSeven();
+//        guessTheNumber();
+//        minMaxNumber();
+//        playingCards();
+//        sumFibonacciNums();
+//        nDividedKFactorial();
+//        nMultiKFactorial();
+//        nDivKPowNFactorial();
+//        catalansNumbers();
+//        numberMatrix();
+//        lastZerosFactorial();
+//        decimalToBinary();
+//        decimalToHex();
+//        binaryToDecimal();
+//        hexToDecimal();
+//        randomNumber();
     }
 
     private static void randomNumber() {
@@ -108,9 +107,10 @@ public class Loops {
     private static void binaryToDecimal() {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter an integer number: ");
-        int n = input.nextInt();
-        System.out.println("The number in binary is: " + Integer.toBinaryString(n));
+        System.out.print("Enter a binary number: ");
+        String numberEntered = input.next();
+
+        int n = Integer.parseInt(numberEntered, 2);
 
         //Transform the binary number to String so we can take its length
         String number = Integer.toBinaryString(n);
@@ -127,16 +127,16 @@ public class Loops {
         //Check each bit of the binary number
         for (; length >= 0; length--) {
             binaryResult = n & mask;
-            System.out.println("The binary result is: " + Integer.toBinaryString(binaryResult));
+//            System.out.println("The binary result is: " + Integer.toBinaryString(binaryResult));
 
             //If n & mask != 0 then the bit on this position is positive
             if (binaryResult != 0 ){
                 resultNumber += Math.pow(2, (length - 1));
-                System.out.println("The result number is: " + Integer.toBinaryString(resultNumber));
+//                System.out.println("The result number is: " + Integer.toBinaryString(resultNumber));
             }
             //Move the mask one bit to the right
             mask >>= 1;
-            System.out.println("The new mask is: " + Integer.toBinaryString(mask));
+//            System.out.println("The new mask is: " + Integer.toBinaryString(mask));
         }
         System.out.println("The actual number is: " + resultNumber);
 
@@ -214,7 +214,7 @@ public class Loops {
         String binaryNumber = "";
 
 
-        for (int i = 0; i <= n; i++) {
+        do {
             //Each remainder of n % 2 is one bit of the binary number
             divResult = n % 2;
             result = divResult;
@@ -226,6 +226,8 @@ public class Loops {
 
             binaryNumber += divResult;
         }
+        while (n > 1);
+
         // Check for the last division remainder
         if (divRemainder == 1){
             result = 1;
@@ -279,10 +281,10 @@ public class Loops {
 
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < n; j++) {
-                System.out.print(number);
+                System.out.print(number + " ");
                 number++;
             }
-            System.out.println(number);
+            System.out.println(number + " ");
             number = i + 2;
         }
 
@@ -292,7 +294,7 @@ public class Loops {
     private static void catalansNumbers() {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter number N > 1: ");
+        System.out.print("Enter number N >= 1: ");
         double n = input.nextDouble();
 
         double nFactorial = 1.0;
@@ -303,21 +305,26 @@ public class Loops {
         double twoMultiN =  2.0 * n;
         double result;
 
-        for (; n > 1; n--) {
-            nFactorial *= n;
-            System.out.println("n factorial is: " + nFactorial);
-        }
-        for (; nPlusOne > 1; nPlusOne--) {
-            nPlusOneFact *= nPlusOne;
-            System.out.println("(n + 1) factorial is: " + nPlusOneFact);
-        }
-        for (; twoMultiN > 1 ; twoMultiN--) {
-            twoMultiNFact *= twoMultiN;
-            System.out.println("(2 * n) factorial is: " + twoMultiNFact);
+        if (n != 0) {
+            for (; n >= 1; n--) {
+                nFactorial *= n;
+                System.out.println("n factorial is: " + nFactorial);
+            }
+            for (; nPlusOne > 1; nPlusOne--) {
+                nPlusOneFact *= nPlusOne;
+                System.out.println("(n + 1) factorial is: " + nPlusOneFact);
+            }
+            for (; twoMultiN > 1; twoMultiN--) {
+                twoMultiNFact *= twoMultiN;
+                System.out.println("(2 * n) factorial is: " + twoMultiNFact);
+            }
+
+            result = twoMultiNFact / (nPlusOneFact * nFactorial);
+            System.out.println("The result of (2 * n)! / ((n + 1)! * n!) is: " + result);
+        } else {
+            System.out.println("You are not allowed to divide by 0!");
         }
 
-        result = twoMultiNFact / (nPlusOneFact * nFactorial);
-        System.out.println("The result of (2 * n)! / ((n + 1)! * n!) is: " + result);
         input.close();
     }
 
@@ -392,9 +399,9 @@ public class Loops {
     private static void nDividedKFactorial() {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter number N > 1: ");
+        System.out.print("Enter dividend number N > 1: ");
         int n = input.nextInt();
-        System.out.print("Enter number K < N: ");
+        System.out.print("Enter divider number K < N: ");
         int k = input.nextInt();
 
         long nFactorial = 1;
@@ -403,15 +410,15 @@ public class Loops {
 
         for (; n > 1; n--) {
             nFactorial *= n;
-            System.out.println(nFactorial);
+            System.out.println("The N! is: " + nFactorial);
         }
         for (; k > 1; k--){
             kFactorial *= k;
-            System.out.println(kFactorial);
+            System.out.println("The K! is: " + kFactorial);
         }
 
         result = nFactorial / kFactorial;
-        System.out.println("N!/K! is: " + result);
+        System.out.println("N! / K! is: " + result);
 
         input.close();
     }
@@ -457,8 +464,25 @@ public class Loops {
                     System.out.printf("%n" + "Suite Spades: ");
             }
 
-            for (int cards = 2; cards < 15; cards++) {
+            for (int cards = 2; cards < 11; cards++) {
                 System.out.print(" " + cards);
+            }
+
+            for (int cards = 10; cards < 15; cards++) {
+                switch(cards){
+                    case 11:
+                        System.out.print(" " + "J");
+                        break;
+                    case 12:
+                        System.out.print(" " + "Q");
+                        break;
+                    case 13:
+                        System.out.print(" " + "K");
+                        break;
+                    case 14:
+                        System.out.print(" " + "A");
+                        break;
+                }
             }
         }
     }
@@ -518,7 +542,7 @@ public class Loops {
         int n = input.nextInt();
 
         for (int i = 1; i <= n; i++){
-            if (((i % 7) == 0) && ((i % 3) == 0)){
+            if (!((i % 7 == 0) && (i % 3 == 0))){
                 System.out.println(i);
             }
         }
