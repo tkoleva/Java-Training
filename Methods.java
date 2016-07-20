@@ -14,7 +14,74 @@ public class Methods {
 //        findFirstBiggerOrSmaller();
 //        showReversedNum();
 //        bigDecimalFactorial();
+//        threeTasksSelection();
+    }
 
+    private static void threeTasksSelection() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter number to select one of the following tasks for execution: ");
+        System.out.println("1: Reverse positive numbers;");
+        System.out.println("2: AverageArraySum;");
+        System.out.println("3: Solve a * x + b = 0.");
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
+
+        switch(choice){
+            case 1:
+                System.out.print("Enter a positive number to be reversed: ");
+                int number = input.nextInt();
+                if (number > 0){
+                    reversePositiveNumber(number);
+                } else {
+                    System.out.println("The number should be a positive one!");
+                    //add the same method again
+                }
+                break;
+            case 2:
+                averageArrayElementsSum(input);
+                break;
+            case 3:
+                simpleEquasionCalc(input);
+                break;
+        }
+
+        input.close();
+    }
+
+    private static void simpleEquasionCalc(Scanner input) {
+        System.out.print("Enter your 'a' number: ");
+        double a = input.nextDouble();
+        System.out.print("Enter your 'b' number: ");
+        double b = input.nextDouble();
+        if (a != 0){
+            double x = - (b / a);
+            System.out.println("The result for x = -(b / a) is: " + x);
+        } else {
+            System.out.println("Number 'a' can't be zero!");
+            // enter the method name here again
+        }
+        return;
+    }
+
+    private static void averageArrayElementsSum(Scanner input) {
+        int[] firstArray = new int[10];
+        double result = 0;
+        for (int i = 1; i < firstArray.length; i++) {
+            System.out.printf("Enter the array element[%d]: ", i);
+            firstArray[i] = input.nextInt();
+            result += firstArray[i];
+        }
+        double averageResult = result / 10;
+        System.out.println("The average result of the array is: " + averageResult);
+    }
+
+    private static void reversePositiveNumber(int number){
+        int digit;
+        while(number != 0){
+            digit = number % 10;
+            System.out.print(digit);
+            number = number / 10;
+        }
     }
 
     private static void bigDecimalFactorial() {
