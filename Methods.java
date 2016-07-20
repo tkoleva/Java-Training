@@ -1,23 +1,35 @@
 package com.company;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Methods {
 
     public static void main(String[] args) {
 //        helloName("Onufri");
-//        int resultOne = getMax(5, 3);
-//        System.out.println(resultOne);
-
-//        int result = getMax(1, 2, 3);
-//        System.out.println(result);
-
+//        maxNumbers();
 //        findLastDigit();
 //        findSameNumInArray();
 //        checkNeighbourElements();
 //        findFirstBiggerOrSmaller();
 //        showReversedNum();
-        
+//        bigDecimalFactorial();
+
+    }
+
+    private static void bigDecimalFactorial() {
+        BigDecimal result = new BigDecimal("1");
+        BigDecimal n;
+
+        for (int i = 100; i >= 1; i--) {
+            for (int j = i; j > 1; j--) {
+                n = new BigDecimal(j);
+                result = result.multiply(n);
+            }
+
+            System.out.println("The " + i + "N! is: " + result);
+            result = result.subtract(result.subtract(BigDecimal.ONE));
+        }
     }
 
     private static void showReversedNum() {
@@ -229,6 +241,14 @@ public class Methods {
         System.out.println("Hello, " + name + "!");
     }
 
+    private static void maxNumbers() {
+        int resultOne = getMax(5, 3);
+        System.out.println(resultOne);
+
+        int result = getMax(1, 2, 3);
+        System.out.println(result);
+    }
+
     static int getMax(int a, int b){
         return (a > b)? a : b;
     }
@@ -237,7 +257,6 @@ public class Methods {
         int maxTwo = getMax(a, b);
         return getMax(maxTwo, c);
     }
-
 
 
 }
