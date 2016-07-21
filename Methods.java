@@ -14,14 +14,14 @@ public class Methods {
 //        findFirstBiggerOrSmaller();
 //        showReversedNum();
 //        bigDecimalFactorial();
-//        threeTasksSelection();
+        threeTasksSelection();
     }
 
     private static void threeTasksSelection() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter number to select one of the following tasks for execution: ");
         System.out.println("1: Reverse positive numbers;");
-        System.out.println("2: AverageArraySum;");
+        System.out.println("2: Find average sum of an array;");
         System.out.println("3: Solve a * x + b = 0.");
         System.out.print("Enter your choice: ");
         int choice = input.nextInt();
@@ -34,7 +34,7 @@ public class Methods {
                     reversePositiveNumber(number);
                 } else {
                     System.out.println("The number should be a positive one!");
-                    //add the same method again
+                    threeTasksSelection();
                 }
                 break;
             case 2:
@@ -58,7 +58,7 @@ public class Methods {
             System.out.println("The result for x = -(b / a) is: " + x);
         } else {
             System.out.println("Number 'a' can't be zero!");
-            // enter the method name here again
+            threeTasksSelection();
         }
         return;
     }
