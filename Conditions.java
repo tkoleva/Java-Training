@@ -5,14 +5,16 @@ import java.util.Scanner;
 public class Conditions {
 
     public static void main(String[] args) {
-//        firstTask();
-//        secondTask();
-//        thirdTask();
-//        fourthTask();
-//        quadraticEquation();
-//        biggestNumber();
-//        zeroSums();
-//        bonusPoints();
+//        firstTask(); - correct
+//        secondTask(); - correct
+//        thirdTask(); - correct
+//        fourthTask(); - correct
+//        quadraticEquation(); - correct
+//        biggestNumber(); - correct
+//        zeroSums(); - correct
+//        bonusPoints(); - correct
+
+//      -- This below should into a method --
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter a number from 0 to 999: ");
