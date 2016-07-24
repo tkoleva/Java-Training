@@ -5,11 +5,17 @@ import java.util.Scanner;
 public class ArraysTasks {
 
     public static void main(String[] args) {
-//        firstTwentyMultipliedToFive();
-//        areTwoArraysEqual();
-//        lexArrays();
-//        getMaxEqualNumsInRow();
-//        getMaxIncreasingNumsInRow();
+//        *firstTwentyMultipliedToFive(); - correct
+//        *areTwoArraysEqual(); - correct
+
+//        *lexArrays(); - you are comparing only the first element, where you should be comparing all of the array elements
+
+//        *getMaxEqualNumsInRow(); - it is sort of working, but if there are for ex. 
+//        - [1,1,1,2,2,2,3,3,3,10,10] it will say that the [3,3,3] are the answer.
+//        - Also not working if there are 0 equal elements.
+
+//        *getMaxIncreasingNumsInRow(); - when I enter [1, 2, 3, -5, -4, -3, -2, -1, 10] it says 5 numbers, but they are 6 from -5 to 10.
+//        - it also throws "Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -3"
 
     }
 
