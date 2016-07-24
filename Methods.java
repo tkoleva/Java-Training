@@ -6,16 +6,22 @@ import java.util.Scanner;
 public class Methods {
 
     public static void main(String[] args) {
-//        helloName("Onufri");
-//        maxNumbers();
-//        findLastDigit();
-//        findSameNumInArray();
-//        checkNeighbourElements();
-//        findFirstBiggerOrSmaller();
-//        showReversedNum();
-//        bigDecimalFactorial();
+//        helloName("Onufri"); - correct
+//        maxNumbers(); - correct
+//        findLastDigit(); - not working for negative numbers
+//        findSameNumInArray(); - correct
+//        checkNeighbourElements(); - correct
+//        findFirstBiggerOrSmaller(); - correct
+//        showReversedNum(); - correct, but you have a method reverseNumber() this method should only be returning the reversed number,
+//        without printing it. The method that it is called from should print it.
+//        bigDecimalFactorial(); - correct
         threeTasksSelection();
     }
+    
+    // *Additional
+    // - what does name of a method "checkLeftElement(int position, int[] testArray)" mean, what are we checking?
+    // same for checkNeighbourElements, 
+    // - biggerOrSmaller has  a method with formated string but no placeholders for the arguments
 
     private static void threeTasksSelection() {
         Scanner input = new Scanner(System.in);
