@@ -1,15 +1,16 @@
 package com.company;
 
-import com.company.classes.TestStudent;
+import com.company.classes.GSMTest;
 
 public class Classes {
 
     public static void main(String[] args) {
 
 //        TestStudent.testStudent();
-        TestStudent.initStudents();
+//        TestStudent.initStudents();
 //        GSM.gsmTest();
-        TestStudent.printStudentsInfo();
+//        TestStudent.printStudentsInfo();
+        GSMTest.createGsmArray();
     }
 
 }

@@ -40,19 +40,6 @@ public class Student {
         Student.initCount++;
     }
 
-    public void showAllData(){
-        System.out.println(firstName);
-        System.out.println(middleName);
-        System.out.println(familyName);
-        System.out.println(course);
-        System.out.println(specialty);
-        System.out.println(universityName);
-        System.out.println(email);
-        System.out.println(phoneNumber);
-        System.out.println(initCount);
-        Student.initCount++;
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -125,5 +112,17 @@ public class Student {
         Student.initCount = initCount;
     }
 
+    public void showAllData(){
+        System.out.println(firstName);
+        System.out.println(middleName);
+        System.out.println(familyName);
+        System.out.println(course);
+        System.out.println(specialty);
+        System.out.println(universityName);
+        System.out.println(email);
+        System.out.println(phoneNumber);
+        System.out.println(initCount);
+        Student.initCount++;
+    }
 }
 
