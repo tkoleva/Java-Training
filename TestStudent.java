@@ -64,5 +64,4 @@ public class TestStudent{
         System.out.println(newStudent.getMiddleName());
         student.getInitCount();
     }
-
 }

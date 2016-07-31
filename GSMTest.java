@@ -21,5 +21,10 @@ public class GSMTest {
         System.out.println(GSM.getNokiaN95());
     }
 
+//    public static void gsmTest(){
+//        GSM gsmModel = new GSM(model);
+//        GSM gsmModelBrand = new GSM(model, brand);
+//        GSM gsm = new GSM(price, owner);
+//    }
 
 }
