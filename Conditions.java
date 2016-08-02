@@ -5,16 +5,18 @@ import java.util.Scanner;
 public class Conditions {
 
     public static void main(String[] args) {
-//        firstTask(); - correct
-//        secondTask(); - correct
-//        thirdTask(); - correct
-//        fourthTask(); - correct
-//        quadraticEquation(); - correct
-//        biggestNumber(); - correct
-//        zeroSums(); - correct
-//        bonusPoints(); - correct
+//        firstTask();
+//        secondTask();
+//        thirdTask();
+//        fourthTask();
+//        quadraticEquation();
+//        biggestNumber();
+//        zeroSums();
+//        bonusPoints();
+//        numberToString();
+    }
 
-//      -- This below should into a method --
+    private static void numberToString() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter a number from 0 to 999: ");
@@ -31,15 +33,6 @@ public class Conditions {
         // The third digit of the number. If not, the third digit = 0
         int  digitOne = (number / 100) % 10;
         System.out.println(digitOne);
-
-        // How many digits the number is consisted of
-//        if ((digitOne == 0) && (digitTwo == 0)){
-//            System.out.println("The number is one digit long.");
-//        } else if ((digitOne == 0) && (digitTwo != 0)){
-//            System.out.println("The number is two digits long.");
-//        } else {
-//            System.out.println("The number is three digits long.");
-//        }
 
         String stringOne = "";
         String stringTwo = "";
