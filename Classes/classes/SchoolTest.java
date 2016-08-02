@@ -32,14 +32,12 @@ public class SchoolTest {
 
         school.getClasses().add(classA1);
         school.getClasses().add(classA2);
-        school.addClass(classA1);
-        System.out.println(school.getClasses().size());
+//        school.addClass(classA1);
 
         school.getStudents().add(studentOne);
         school.getStudents().add(studentTwo);
         school.getStudents().add(studentThree);
-        school.addStudent(studentOne);
-        System.out.println(school.getStudents().size());
+//        school.addStudent(studentOne);
     }
 
     public void initClasses(){
@@ -54,13 +52,21 @@ public class SchoolTest {
         studentOne.setFirstName("Mariya");
         studentOne.setLastName("Blagoeva");
         studentOne.setStudentID("PK32434");
+
+        studentTwo.setFirstName("Cenko");
+        studentTwo.setLastName("Senov");
+        studentTwo.setStudentID("PK1234");
+
+        studentThree.setFirstName("Opa");
+        studentThree.setLastName("Opa");
+        studentThree.setStudentID("PK45678");
     }
 
     public void initTeacher(){
         mathTeacher.setFirstName("Metodi");
         mathTeacher.setLastName("Kirilov");
         mathTeacher.getDisciplines().add(mathDiscipline);
-        mathTeacher.addDiscipline(mathDiscipline);
+//        mathTeacher.addDiscipline(mathDiscipline);
 
         biologyTeacher.setFirstName("George");
         biologyTeacher.setLastName("Georgiev");
@@ -77,7 +83,36 @@ public class SchoolTest {
         biology.setExerciseNumber(24);
     }
 
-    public void printSchool(){
-        System.out.println(school.getName());
+    public void printSchoolData(){
+        System.out.println("Your test school is: " + school.getName());
+        System.out.println();
+
+        System.out.println("This school has the following classes: ");
+        for (SchoolClass schoolClass: school.getClasses()) {
+            System.out.println(schoolClass.getClassID());
+        }
+        System.out.println();
+
+        System.out.println("The following students are in this school: ");
+        for (StudentInClass studentsInSchool: school.getStudents()) {
+            System.out.print(studentsInSchool.getFirstName() + " " + studentsInSchool.getLastName());
+            System.out.println(" with ID: " + studentsInSchool.getStudentID());
+        }
+        System.out.println();
+
+        System.out.println("Students in class " + classA1.getClassID() + " have the following teachers: ");
+        for (Teacher printTeacher: classA1.getTeacher()) {
+            System.out.println(printTeacher.getFirstName() + " " + printTeacher.getLastName());
+            System.out.println("This teacher is teaching: " + mathDiscipline.getName());
+        }
+        System.out.println();
+
+        System.out.println("Students in class " + classA2.getClassID() + " have the following teachers: ");
+        for (Teacher printTeacher: classA2.getTeacher()) {
+            System.out.println(printTeacher.getFirstName() + " " + printTeacher.getLastName());
+            System.out.println("This teacher is teaching: " + biology.getName());
+        }
+        System.out.println();
+
     }
 }

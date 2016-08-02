@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 //Task 8
 public class GSM {
-    private static String model = "Test model";
-    private static String brand = "Test brand";
-    private static Double price = 300.00;
-    private static String owner = "Test owner";
+    private String model;
+    private String brand;
+    private Double price;
+    private String owner;
 
     //Task 10
     private static String nokiaN95 = "Mobile phone model Nokia95";
@@ -21,43 +21,42 @@ public class GSM {
 
     //Task 9
     public GSM(){
-
     }
 
     public GSM(String model){
-        GSM.model = model;
+        this.model = model;
         brand = null;
         price = 0.0;
         owner = null;
     }
 
     public GSM(String model, String brand){
-        GSM.model = model;
-        GSM.brand = brand;
+        this.model = model;
+        this.brand = brand;
         price = 0.0;
         owner = null;
     }
 
     public GSM(double price, String owner){
-        GSM.price = price;
-        GSM.owner = owner;
+        this.price = price;
+        this.owner = owner;
         model = null;
         brand = null;
     }
 
-    public static String getModel() {
+    public String getModel() {
         return model;
     }
 
-    public static String getBrand() {
+    public String getBrand() {
         return brand;
     }
 
-    public static Double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public static String getOwner() {
+    public String getOwner() {
         return owner;
     }
 
@@ -66,20 +65,20 @@ public class GSM {
         return nokiaN95;
     }
 
-    public static void setModel(String model) {
-        GSM.model = model;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public static void setBrand(String brand) {
-        GSM.brand = brand;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public static void setPrice(Double price) {
-        GSM.price = price;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
-    public static void setOwner(String owner) {
-        GSM.owner = owner;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     //Task 10
@@ -87,13 +86,19 @@ public class GSM {
         GSM.nokiaN95 = nokiaN95;
     }
 
+    public void initGSM(){
+        model = "Test model";
+        brand = "Test brand";
+        price = 300.00;
+        owner = "Test owner";
+    }
 
     //Task 12
-    public static void printInfo(){
-        System.out.println(GSM.getPrice());
-        System.out.println(GSM.getBrand());
-        System.out.println(GSM.getModel());
-        System.out.println(GSM.getOwner());
+    public void printInfo(){
+        System.out.println(getPrice());
+        System.out.println(getBrand());
+        System.out.println(getModel());
+        System.out.println(getOwner());
     }
 
     //Task 14

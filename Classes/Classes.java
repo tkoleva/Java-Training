@@ -1,17 +1,26 @@
 package com.company;
 
-import com.company.classes.SchoolTest;
-
 public class Classes {
 
     public static void main(String[] args) {
 
 //        TestStudent.testStudent();
 //        TestStudent.initStudents();
-//        GSM.gsmTest();
 //        TestStudent.printStudentsInfo();
-//        GSMTest.createGsmArray();
 
+        //Tasks 8 - 11
+//        GSM gsm = new GSM();
+//        gsm.initGSM();
+//        gsm.printInfo();
+
+        //Task 12
+//        GSMTest gsmTest = new GSMTest();
+//        gsmTest.createGsmArray();
+//        gsmTest.initGSMs();
+//        gsmTest.printGSMInfo();
+//        gsmTest.printNokia95();
+
+        //Task 17
 //        GSMCallHistoryTest callHistoryTest = new GSMCallHistoryTest();
 //        callHistoryTest.executeCallHistoryTest();
 
@@ -29,8 +38,8 @@ public class Classes {
 //        libraryTest.printBooksFromLibrary();
 
         //Task 20
-        SchoolTest schoolTest = new SchoolTest();
-        schoolTest.init();
-        schoolTest.printSchool();
+//        SchoolTest schoolTest = new SchoolTest();
+//        schoolTest.init();
+//        schoolTest.printSchoolData();
     }
 }

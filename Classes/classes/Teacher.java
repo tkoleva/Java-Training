@@ -9,7 +9,7 @@ public class Teacher {
 
     private String firstName;
     private String lastName;
-    private ArrayList<Discipline> disciplines;
+    private ArrayList<Discipline> disciplines = new ArrayList<>();
 
     public String getFirstName() {
         return firstName;

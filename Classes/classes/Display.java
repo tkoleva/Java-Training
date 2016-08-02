@@ -6,8 +6,8 @@ package com.company.classes;
 
 //Task 8
 public class Display {
-    private static String size;
-    private static String[] colours = new String[5];
+    private String size;
+    private String[] colours = new String[5];
 
     public Display(String size){
         this.size = size;
@@ -24,19 +24,19 @@ public class Display {
         this.size = size;
     }
 
-    public static String getSize() {
+    public String getSize() {
         return size;
     }
 
-    public static String[] getColours() {
+    public String[] getColours() {
         return colours;
     }
 
-    public static void setSize(String size) {
-        Display.size = size;
+    public void setSize(String size) {
+        this.size = size;
     }
 
-    public static void setColours(String[] colours) {
-        Display.colours = colours;
+    public void setColours(String[] colours) {
+        this.colours = colours;
     }
 }

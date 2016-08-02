@@ -5,9 +5,9 @@ package com.company.classes;
  */
 //Task 8
 public class Battery {
-    private static String model;
-    private static String idleTime;
-    private static Double hoursTalk;
+    private String model;
+    private String idleTime;
+    private Double hoursTalk;
 
 
     public Battery(String model){
@@ -28,27 +28,27 @@ public class Battery {
         idleTime = null;
     }
 
-    public static Double getHoursTalk() {
+    public Double getHoursTalk() {
         return hoursTalk;
     }
 
-    public static String getModel() {
+    public String getModel() {
         return model;
     }
 
-    public static String getIdleTime() {
+    public String getIdleTime() {
         return idleTime;
     }
 
-    public static void setHoursTalk(Double hoursTalk) {
-        Battery.hoursTalk = hoursTalk;
+    public void setHoursTalk(Double hoursTalk) {
+        this.hoursTalk = hoursTalk;
     }
 
-    public static void setModel(String model) {
-        Battery.model = model;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public static void setIdleTime(String idleTime) {
-        Battery.idleTime = idleTime;
+    public void setIdleTime(String idleTime) {
+        this.idleTime = idleTime;
     }
 }
