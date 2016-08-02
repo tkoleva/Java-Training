@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.classes.SchoolTest;
+
 public class Classes {
 
     public static void main(String[] args) {
@@ -25,5 +27,10 @@ public class Classes {
 //        libraryTest.addBooksToLibrary();
 //        libraryTest.findAndDeleteBookByAuthor("Stephen King");
 //        libraryTest.printBooksFromLibrary();
+
+        //Task 20
+        SchoolTest schoolTest = new SchoolTest();
+        schoolTest.init();
+        schoolTest.printSchool();
     }
 }
